@@ -38,3 +38,23 @@ fn notify<T: Summary>(item: &T) {
 // With this item1 and item2 will be of the same type of instance of data 
 // which implemented Summary traits
 // fn notify<T: Summary>(item1: &T, item2: &T) {}
+
+// Specifying multiple Trait Bounds with + syntax
+// In the code below, Summary and Display are the two traits we want T to implement
+// to use as an arguments in this function
+
+// pub fn notify<T: Summary + Display>(item: &T) {}
+
+// Trait bounds can be specified using the where clause instead of putting
+// them in the <> buttons. This is handy when we have multiple generic types
+// below two syntax are equivalent 
+
+// Mutliple Trait Bounds defined in signature of function
+// fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {}
+
+// Trait bounds using the where syntax
+// The below syntax is equivalent to the above
+// fn some_function<T, U>(t: &T, u: &U) -> i32
+//     where T: Display + Clone,
+//           U: Clone + Debug
+// {}
